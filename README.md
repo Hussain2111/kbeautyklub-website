@@ -14,6 +14,3 @@ This repository contains the source code for K-Beauty Klub's e-commerce website,
 - Product reviews and ratings
 - Admin panel for site management
 
-## Installation
-
-1. Clone the repository:
