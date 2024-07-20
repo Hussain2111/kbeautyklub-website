@@ -1,0 +1,49 @@
+/* File: Filter.css */
+
+.filter h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  .filter-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .filter-section label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  .filter-section input[type="radio"],
+  .filter-section input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .filter-section .price-range {
+    display: inline;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .filter-section .price-input {
+    justify-content: space-between;
+    width: 75px;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin: 5px;
+    height: 30px;
+
+  }
+  
+  .filter-section .price-slider {
+    margin: 10px;
+    size: 10px;
+    width: 85%;
+  }

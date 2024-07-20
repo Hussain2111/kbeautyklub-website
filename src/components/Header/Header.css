@@ -12,6 +12,7 @@
   align-items: center;
   padding: 10px 20px;
   border-bottom: 1px solid #ccc;
+  height: 60px; /* Adjust height as needed */
 }
 
 .logo-container {
@@ -32,7 +33,7 @@
 
 .search-container {
   flex: 0.5; /* Take up available space */
-  margin-left: 0; /* Adjust margin as needed */
+  left: 50%;
   width: 100px /* Ensure full width */
 }
 

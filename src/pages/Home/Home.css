@@ -1,91 +1,105 @@
 .hero-section {
-    position: relative; /* Ensure positioning context for absolute elements */
-    height: 400px; /* Adjust height as needed */
-    background-image: url('stock-1.jpg'); /* Replace with your image path */
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    color: #fff; /* Text color */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .hero-content {
-    position: relative; /* Ensure text is positioned relative to parent */
-    z-index: 1; /* Ensure text is above background */
-  }
-  
-  .hero-content h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  .hero-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .shop-now-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #A89BF7; /* Purple background */
-    color: #fff; /* Text color */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .shop-now-button:hover {
-    background-color: #865dc0; /* Darker purple on hover */
-  }
+  position: relative; /* Ensure positioning context for absolute elements */
+  height: 400px; /* Adjust height as needed */
+  background-image: url('stock-1.jpg'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  color: #fff; /* Text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  .button-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .section-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #A89BF7;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 0 10px; /* Adjust margin between buttons */
-  }
-  
-  .section-button:hover {
-    background-color: #865dc0;
-  }
-  
-  .navigation-arrows {
-    position: absolute; /* Position arrows relative to product section */
-    top: 50%;
-    transform: translateY(-50%); /* Center arrows vertically */
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px; /* Adjust to align perfectly */
-    z-index: 2; /* Ensure arrows are above product cards */
-  }
-  
-  .arrow {
-    padding: 10px;
-    background-color: #A89BF7;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .arrow:hover {
-    background-color: #865dc0;
-  }
-  
+.hero-content {
+  position: relative; /* Ensure text is positioned relative to parent */
+  z-index: 1; /* Ensure text is above background */
+}
 
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-  
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.shop-now-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #A89BF7; /* Purple background */
+  color: #fff; /* Text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.shop-now-button:hover {
+  background-color: #865dc0; /* Darker purple on hover */
+}
+
+.button-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.section-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #A89BF7;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px; /* Adjust margin between buttons */
+}
+
+.section-button:hover {
+  background-color: #865dc0;
+}
+
+.skin-type-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.skin-type-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.skin-type-item {
+  text-align: center;
+  width: 200px;
+}
+
+.skin-type-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.skin-type-item h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-section {
+  display: absolute;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.carousel-item-padding-40-px {
+  padding: 0 20px; /* Adjust padding as needed to reduce gaps */
+}

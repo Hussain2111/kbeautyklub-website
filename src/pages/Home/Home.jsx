@@ -1,36 +1,30 @@
 import React from 'react';
-import Slider from 'react-slick';
-import './stock2.jpg'; // Import your image for the product
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import './Home.css'; // Import your CSS file for styling
 import ProductCard from '../../components/ProductCard/ProductCard'; // Import the ProductCard component
+import stock2 from './stock2.jpg';
 
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
-const SampleNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "black", right: "-30px", zIndex: 1 }}
-      onClick={onClick}
-    />
-  );
-};
-
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "black", left: "-30px", zIndex: 1 }}
-      onClick={onClick}
-    />
-  );
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 4 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
+  }
 };
 
 const Home = () => {
-  const stock2 = require('./stock2.jpg'); // Adjust path if needed
+ // Adjust path if needed
 
   const products = [
     { id: 1, name: "Product 1", price: "$10", image: stock2 },
@@ -44,36 +38,8 @@ const Home = () => {
     // Add more products as needed
   ];
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, // Adjust number of cards shown
-    slidesToScroll: 3, // Adjust number of cards scrolled at a time
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ],
-    centerMode: true,
-    centerPadding: '40px',
-  };
-
   return (
-    <div>
+    <div className="home">
       <div className="hero-section">
         <div className="hero-content">
           <p>Discover amazing products for every occasion.</p>
@@ -84,6 +50,29 @@ const Home = () => {
       <div className="button-section">
         <button className="section-button">New Arrivals</button>
         <button className="section-button">Offers</button>
+      </div>
+      <div className="product-section">
+        <Carousel
+          swipeable={true}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          autoPlay={false}
+          autoPlaySpeed={1000}
+          keyBoardControl={true}
+          customTransition="all 1"
+          transitionDuration={250}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </Carousel>
       </div>
     </div>
   );

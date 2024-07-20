@@ -1,5 +1,12 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
 .main-content {
   flex: 1; /* Take remaining vertical space */
-   /* Add top padding */
-  padding-bottom: 20px; /* Add bottom padding */
+  background-color: #f7f7f7;
+ /* Header height (60px) + desired gap (20px) */
+  padding-bottom: 80px; /* Footer height (60px) + desired gap (20px) */
 }

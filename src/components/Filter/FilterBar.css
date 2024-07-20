@@ -1,0 +1,43 @@
+.filter-bar {
+    display:inline-flexbox;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .results {
+    font-size: 16px;
+  }
+  
+  .filters {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .filter-dropdown {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .view-options {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .view-button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .view-button.grid-view::before {
+    content: "🔲";
+    margin-right: 5px;
+    border: 0;
+  }
+  
+  .view-button.list-view::before {
+    content: "🔳";
+    margin-right: 5px;
+  }
+  

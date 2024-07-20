@@ -1,0 +1,44 @@
+.products-page {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* Two columns: filter and product grid */
+  grid-gap: 50px; /* Gap between filter and product grid */
+}
+
+.filter-bar {
+  grid-column: span 2; /* Filter bar spans across both columns */
+  margin-bottom: 20px; /* Add spacing between FilterBar and Filter */
+  display: flex;
+}
+
+.filter {
+  padding: 10px;
+  width: 200px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  margin-right: 20px; /* Space between Filter and products */
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  align-items: center;
+}
+
+.products ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.products li {
+  margin-bottom: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Example grid setup */
+  grid-gap: 20px; /* Gap between product items */
+
+}

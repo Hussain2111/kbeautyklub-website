@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 import searchIcon from '../../assets/magnifying-glass.svg';
+//import CartPreview from './CartPreview'; // Import the CartPreview component
 
 const Header = () => {
-  const navigate = useNavigate();
   const [query, setQuery] = useState('');
-  const isLoggedIn = false; // Replace this with actual login status
+  const [cartVisible, setCartVisible] = useState(false); // State to manage cart visibility
 
   const handleSearch = (event) => {
     event.preventDefault();
     if (query.trim()) {
-      navigate(`/products?search=${encodeURIComponent(query.trim())}`);
+      // Navigate to products page with search query
       setQuery('');
     }
   };
@@ -24,11 +24,11 @@ const Header = () => {
   };
 
   const handleAccountClick = () => {
-    if (!isLoggedIn) {
-      navigate('/login');
-    } else {
-      navigate('/account');
-    }
+    // Handle account click based on login status
+  };
+
+  const toggleCartPreview = () => {
+    setCartVisible(!cartVisible);
   };
 
   return (
@@ -57,18 +57,16 @@ const Header = () => {
           </form>
         </div>
         <div className="nav-links">
-          <button onClick={handleAccountClick} className="account-button">
+          <Link to="/login" className="account-button">
             <FontAwesomeIcon icon={faUser} className="custom-account-icon" />
-          </button>
-          <Link to="/cart" className="cart-button">
-            <FontAwesomeIcon icon={faShoppingCart} className="custom-cart-icon" />
           </Link>
+          {/* Integrate CartPreview component here */}
         </div>
       </header>
       <nav className="menu">
         <Link to="/new-in">NEW IN</Link>
         <Link to="/brands">BRANDS</Link>
-        <Link to="/skincare">SKINCARE</Link>
+        <Link to="/Products">SKINCARE</Link>
         <Link to="/gifts-sets">GIFTS & SETS</Link>
         <Link to="/offers">OFFERS</Link>
       </nav>
