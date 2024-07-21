@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp/Signup'; // Import your SignUp component
 import Footer from './components/Footer/Footer';
 import './App.css';
 import './components/ProductCard/ProductCard'; // Import ProductCard CSS for styling
+import Checkout from './pages/Checkout/Checkout'; // Import your Checkout component
 
 const App = () => (
   <Router>
@@ -19,6 +20,7 @@ const App = () => (
           <Route path="/products" element={<Products />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </div>
       <Footer />

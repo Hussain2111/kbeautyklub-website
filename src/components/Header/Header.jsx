@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 import searchIcon from '../../assets/magnifying-glass.svg';
-import CartPreview from './CartPreview'; // Import the CartPreview component
+import CartPreview from './CartPreview';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [query, setQuery] = useState('');
-  const [cartVisible, setCartVisible] = useState(false); // State to manage cart visibility
+  const [cartVisible, setCartVisible] = useState(false);
+  const navigate = useNavigate();
+  const cartRef = useRef(null);
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -23,13 +26,27 @@ const Header = () => {
     setQuery(event.target.value);
   };
 
-  const handleAccountClick = () => {
-    // Handle account click based on login status
+  const handleCheckout = () => {
+    navigate('/checkout');
+    setCartVisible(false);
   };
 
   const toggleCartPreview = () => {
     setCartVisible(!cartVisible);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setCartVisible(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -60,13 +77,12 @@ const Header = () => {
           <Link to="/login" className="account-button">
             <FontAwesomeIcon icon={faUser} className="custom-account-icon" />
           </Link>
-          <div className="cart-container" ref={CartPreview}>
+          <div className="cart-container" ref={cartRef}>
             <button onClick={toggleCartPreview} className="cart-button">
               <FontAwesomeIcon icon={faShoppingCart} className="custom-cart-icon" />
             </button>
-            {cartVisible && <CartPreview />}
+            {cartVisible && <CartPreview onCheckout={handleCheckout}/>}
           </div>
-          {/* Integrate CartPreview component here */}
         </div>
       </header>
       <nav className="menu">
