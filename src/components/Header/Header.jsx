@@ -5,7 +5,7 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Header.css';
 import searchIcon from '../../assets/magnifying-glass.svg';
-//import CartPreview from './CartPreview'; // Import the CartPreview component
+import CartPreview from './CartPreview'; // Import the CartPreview component
 
 const Header = () => {
   const [query, setQuery] = useState('');
@@ -60,6 +60,12 @@ const Header = () => {
           <Link to="/login" className="account-button">
             <FontAwesomeIcon icon={faUser} className="custom-account-icon" />
           </Link>
+          <div className="cart-container" ref={CartPreview}>
+            <button onClick={toggleCartPreview} className="cart-button">
+              <FontAwesomeIcon icon={faShoppingCart} className="custom-cart-icon" />
+            </button>
+            {cartVisible && <CartPreview />}
+          </div>
           {/* Integrate CartPreview component here */}
         </div>
       </header>

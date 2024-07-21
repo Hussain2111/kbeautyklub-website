@@ -103,3 +103,31 @@
 .menu a:hover {
   color: #000; /* Change color on hover */
 }
+
+
+.cart-container {
+  position: relative;
+}
+
+.cart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.custom-cart-icon {
+  font-size: 24px;
+}
+
+/* You may need to adjust the positioning of the CartPreview component */
+.cart-preview {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}

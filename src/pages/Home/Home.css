@@ -1,10 +1,10 @@
 .hero-section {
-  position: relative; /* Ensure positioning context for absolute elements */
-  height: 400px; /* Adjust height as needed */
-  background-image: url('stock-1.jpg'); /* Replace with your image path */
-  background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the background image */
-  color: #fff; /* Text color */
+  position: relative;
+  height: 400px;
+  background-image: url('stock-1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,8 +12,8 @@
 }
 
 .hero-content {
-  position: relative; /* Ensure text is positioned relative to parent */
-  z-index: 1; /* Ensure text is above background */
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content h1 {
@@ -29,15 +29,15 @@
 .shop-now-button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #A89BF7; /* Purple background */
-  color: #fff; /* Text color */
+  background-color: #A89BF7;
+  color: #fff;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .shop-now-button:hover {
-  background-color: #865dc0; /* Darker purple on hover */
+  background-color: #865dc0;
 }
 
 .button-section {
@@ -54,7 +54,7 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin: 0 10px; /* Adjust margin between buttons */
+  margin: 0 10px;
 }
 
 .section-button:hover {
@@ -91,15 +91,59 @@
   color: #333;
 }
 
-.product-section {
-  display: absolute;
-  justify-content: center;
-  padding: 40px 20px;
-  text-align: center;
-  justify-content: center;
+/* ... (previous styles remain unchanged) ... */
 
+.product-section {
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
 }
 
-.carousel-item-padding-40-px {
-  padding: 0 20px; /* Adjust padding as needed to reduce gaps */
+.carousel-container {
+  padding: 0 20px; /* Add some padding on the sides */
+}
+
+.react-multi-carousel-track {
+  display: flex;
+  align-items: center;
+}
+
+.product-card {
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+  width: 25%; /* Exactly 4 items in view */
+  transition: all 0.3s ease;
+}
+
+.react-multi-carousel-item {
+  transition: all 0.3s ease;
+}
+
+/* Show all items */
+.react-multi-carousel-item {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.react-multiple-carousel__arrow {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  min-width: 40px;
+  min-height: 40px;
+  z-index: 10;
+}
+
+.react-multiple-carousel__arrow::before {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 10px;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: 10px;
 }
