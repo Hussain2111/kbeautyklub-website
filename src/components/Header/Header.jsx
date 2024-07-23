@@ -7,10 +7,12 @@ import './Header.css';
 import searchIcon from '../../assets/magnifying-glass.svg';
 import CartPreview from './CartPreview';
 import { useNavigate } from 'react-router-dom';
+import AccountPage from '../../pages/Account.jsx/Account';
 
 const Header = () => {
   const [query, setQuery] = useState('');
   const [cartVisible, setCartVisible] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const cartRef = useRef(null);
 
@@ -20,6 +22,10 @@ const Header = () => {
       // Navigate to products page with search query
       setQuery('');
     }
+  };
+
+  const handleAccountClick = () => {
+    navigate('/account');
   };
 
   const handleInputChange = (event) => {
@@ -45,6 +51,22 @@ const Header = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    const checkLoginStatus = () => {
+      // Replace this with your actual login check logic
+      const userLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      setIsLoggedIn(userLoggedIn);
+    };
+
+    checkLoginStatus();
+    // Add event listener for login status changes
+    window.addEventListener('storage', checkLoginStatus);
+
+    return () => {
+      window.removeEventListener('storage', checkLoginStatus);
     };
   }, []);
 
@@ -74,9 +96,9 @@ const Header = () => {
           </form>
         </div>
         <div className="nav-links">
-          <Link to="/login" className="account-button">
+        <button onClick={handleAccountClick} className="account-button">
             <FontAwesomeIcon icon={faUser} className="custom-account-icon" />
-          </Link>
+          </button>
           <div className="cart-container" ref={cartRef}>
             <button onClick={toggleCartPreview} className="cart-button">
               <FontAwesomeIcon icon={faShoppingCart} className="custom-cart-icon" />

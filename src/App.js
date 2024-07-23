@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 import './components/ProductCard/ProductCard'; // Import ProductCard CSS for styling
 import Checkout from './pages/Checkout/Checkout'; // Import your Checkout component
+import AccountPage from './pages/Account.jsx/Account';
 
 const App = () => (
   <Router>
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/account" element={<AccountPage />} />
         </Routes>
       </div>
       <Footer />

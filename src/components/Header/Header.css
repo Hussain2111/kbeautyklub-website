@@ -80,9 +80,6 @@
   padding: 0 10px;
 }
 
-.custom-account-icon, .custom-cart-icon {
-  font-size: 24px; /* Ensure the icons are the correct size */
-}
 
 .menu {
   display: flex;
@@ -103,22 +100,28 @@
 .menu a:hover {
   color: #000; /* Change color on hover */
 }
-
-
-.cart-container {
-  position: relative;
+.custom-account-icon, .custom-cart-icon {
+  font-size: 24px;
+  color: #A89BF7; /* Matches the logo color */
 }
 
-.cart-button {
+.account-button, .cart-button {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0 10px;
 }
 
-.custom-cart-icon {
-  font-size: 24px;
+.account-button:hover, .cart-button:hover {
+  opacity: 0.8; /* Adds a subtle hover effect */
+  background-color: transparent !important;
 }
+
+
+.cart-container {
+  position: relative;
+}
+
 
 /* You may need to adjust the positioning of the CartPreview component */
 .cart-preview {

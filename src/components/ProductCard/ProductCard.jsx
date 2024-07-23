@@ -1,17 +1,16 @@
 import React from 'react';
-import './ProductCard.css'; // Import corresponding CSS for styling
+import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
-  const { name, image, price } = product;
+  const { name, company, image, price, details } = product;
 
   return (
     <div className="product-card">
       <img src={image} alt={name} className="product-image" />
-      <div className="product-details">
-        <h2 className="product-name">{name}</h2>
-        <p className="product-price">${price}</p>
-        <button className="add-to-cart-button">Add to Cart</button>
-      </div>
+      <h2 className="product-name">{name}</h2>
+      <p className="product-details">{details}</p>
+      <p className="company-name">{company}</p>
+      <p className="product-price">£{price}</p>
     </div>
   );
 };
