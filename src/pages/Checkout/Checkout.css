@@ -2,25 +2,16 @@
   display: flex;
   justify-content: space-between;
   max-width: 1200px;
-  margin: 0 auto;
   font-family: Arial, sans-serif;
 }
 
 .checkout-form {
-  width: 50%;
-  margin-left: 20px;
-
-}
-
-.cart-preview-sticky {
-  width: 40%;
-  position: sticky;
-  top: 20px;
-  align-self: flex-start;
-  background-color: #f7f7f7;
-  margin-right: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
+  width: 60%;
+  padding-left: 20px;
+  border-right: 1px solid #ddd;
+  padding-right: 10px;
+  background-color: aliceblue;
+  
 }
 
 h1 {
@@ -35,44 +26,78 @@ h2, h3 {
 
 .express-checkout {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  gap: 10px;
+  justify-content: center;
 }
 
-.express-checkout button {
-  flex: 1;
-  margin: 0 5px;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+
+.express-checkout button:hover {
+  background-color: #9575d1a4;
 }
 
-.shop-pay { background-color: #5a31f4; color: white; }
-.paypal { background-color: #ffc439; }
-.g-pay { background-color: #000; color: white; }
-
+.shop-pay { 
+  background-color: #5a31f4;
+  color: white;
+  border-radius: 8px;
+  width: 150px;
+  height: 50px;
+}
+.paypal { 
+  background-color: #ffc439;
+  color: #003087;
+  border-radius: 8px;
+  width: 150px;
+}
+.g-pay { 
+  background-color: #000;
+  color: white;
+  border-radius: 8px;
+  width: 150px;
+}
 .divider {
   text-align: center;
   margin: 20px 0;
   color: #999;
 }
 
-
-input, select {
+.form-group {
+  display: block;
+  gap: 20px; /* This creates space between elements */
   width: 100%;
-  padding: 10px;
+  padding-bottom: 20px;
+
+}
+.form-group input,
+.form-group select {
+  width: 90%;
+  height: 30px;
+  margin: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+  padding: 10px;
 }
 
-select {
-  appearance: none;
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-  background-repeat: no-repeat;
-  background-position: right 10px top 50%;
-  background-size: 12px auto;
+.select {
+  width: 93%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.half {
+  display: flex;
+  justify-content: space-between;
+  width: 96%;
+}
+
+.cart-preview-sticky {
+  width: 40%;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  background-color: #f7f7f7;
+  padding: 20px;
 }
 
 .cart-item {
@@ -116,72 +141,4 @@ select {
   border-top: 1px solid #ddd;
   padding-top: 10px;
 }
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-}
-
-.checkbox-group input[type="checkbox"] {
-  margin-right: 10px;
-  width: auto;
-}
-
-.checkbox-group label {
-  font-size: 14px;
-}
-
-.form-group {
-  display: flex;
-  gap: 20px; /* This creates space between elements */
-  width: 100%;
-  height: 50px;
-
-}
-
-
-
-.form-container {
-  width: 90%;
-  background-color: #f0e6ff; /* Light shade of purple */
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  justify-content: space-between;
-}
-
-.form-group.name-group {
-  display: flex;
-  gap: 5px;
-  width: 95%;
-}
-
-.form-group.full-width {
-  width: 100%;
-}
-
-.form-group.half-width {
-  width: calc(50% - 5px); /* Subtracting half of the gap to account for the space between */
-}
-
-
-/* For single input form groups */
-.form-group:not(.name-group) {
-  display: block;
-}
-
-.form-row {
-  display: flex;
-  gap: 10px;
-}
-
 

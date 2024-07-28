@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './Checkout.css';
+import { SiShopify } from 'react-icons/si';
+import { FaPaypal } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 
 const CheckoutPage = () => {
   const [formData, setFormData] = useState({
@@ -30,24 +33,20 @@ const CheckoutPage = () => {
       <div className="checkout-form">
         <h2>Express checkout</h2>
         <div className="express-checkout">
-          <button className="shop-pay">Shop Pay</button>
-          <button className="paypal">PayPal</button>
-          <button className="g-pay">G Pay</button>
+          <button className="shop-pay"><SiShopify size={16} />      </button>
+          <button className="paypal"><FaPaypal size={16} />     PayPal</button>
+          <button className="g-pay"><FaGoogle size={16} />    Pay</button>
         </div>
         <div className="divider">OR</div>
         <form>
           <h3>Delivery</h3>
-          <div className="form-group">
-            <label>Country/Region</label>
-          </div>
-          <div className="form-group">
-            <select name="country" value={formData.country} onChange={handleChange}>
+          <label>Country/Region</label>
+            <select className="select" name="country" value={formData.country} onChange={handleChange}>
               <option value="United Kingdom">United Kingdom</option>
             </select>
-          </div>
-          <div className="form-group name-group">
+          <div className="form-group">
+            <div className="half">
             <input 
-              className="text-field-half"
               type="text" 
               name="firstName" 
               placeholder="First name" 
@@ -55,45 +54,41 @@ const CheckoutPage = () => {
               onChange={handleChange} 
             />
             <input 
-            className="text-field-half"
               type="text" 
               name="lastName" 
               placeholder="Last name" 
               value={formData.lastName} 
               onChange={handleChange} 
             />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="text" name="company" placeholder="Company (optional)" value={formData.company} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="text" name="apartment" placeholder="Apartment, suite, etc. (optional)" value={formData.apartment} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="text" name="city" placeholder="City" value={formData.city} onChange={handleChange} />
             </div>
-            <div className="form-group">
-            <input className="text-field" type="text" name="postcode" placeholder="Postcode" value={formData.postcode} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="tel" name="phone" placeholder="Phone (optional)" value={formData.phone} onChange={handleChange} />
-          </div>
+            <input type="text" name="company" placeholder="Company (optional)" value={formData.company} onChange={handleChange} />
+            <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} />
+            <input type="text" name="apartment" placeholder="Apartment, suite, etc. (optional)" value={formData.apartment} onChange={handleChange} />
+            <input type="text" name="city" placeholder="City" value={formData.city} onChange={handleChange} />
+            <div className="half">
+            <input 
+              type="text" 
+              name="postcode" 
+              placeholder="Postcode" 
+              value={formData.postcode} 
+              onChange={handleChange} 
+            />
+            <input 
+            type="tel" 
+            name="phone" 
+            placeholder="Phone (optional)" 
+            value={formData.phone} 
+            onChange={handleChange} />
+            </div>
+            </div>
         </form>
-
         <form>
           <h3>Payment</h3>
           <div className="form-group">
             <input className="text-field" type="text" name="cardNumber" placeholder="Card number" value={formData.cardNumber} onChange={handleChange} />
-          </div>
-          <div className="form-group">
             <input className="text-field" type="text" name="cardName" placeholder="Name on card" value={formData.cardName} onChange={handleChange} />
-          </div>
-          <div className="form-group name-group">
+            <div className="half">
             <input 
-              className="text-field-half"
               type="text" 
               name="expiryDate" 
               placeholder="Expiry date (MM/YY)" 
@@ -101,38 +96,32 @@ const CheckoutPage = () => {
               onChange={handleChange} 
             />
             <input 
-            className="text-field-half"
               type="text" 
               name="cvc" 
               placeholder="CVC" 
               value={formData.cvc} 
               onChange={handleChange} 
             />
+            </div>
           </div>
-          <div className="form-group checkbox-group">
-            <input
-              type="checkbox"
-              name="sameAddress"
-              checked={formData.sameAddress}
-              onChange={handleChange}
-              id="sameAddress"
-            />
-            <label htmlFor="sameAddress">Billing address same as shipping address</label>
-          </div>
+          <input
+            type="checkbox"
+            name="sameAddress"
+            checked={formData.sameAddress}
+            onChange={handleChange}
+            id="sameAddress"
+          />
+          <label htmlFor="sameAddress">Billing address same as shipping address</label>
           {!formData.sameAddress && (
-            <>
-              <h3>Billing Address</h3>
-              <div className="form-group">
+          <>
+          <h3>Billing Address</h3>
           <label>Country/Region</label>
-          </div>
-              <div className="form-group">
-            <select name="country" value={formData.country} onChange={handleChange}>
+            <select className="select" name="country" value={formData.country} onChange={handleChange}>
               <option value="United Kingdom">United Kingdom</option>
             </select>
-          </div>
-          <div className="form-group name-group">
+          <div className="form-group">
+            <div className="half">
             <input 
-            className="text-field-half"
               type="text" 
               name="firstName" 
               placeholder="First name" 
@@ -140,32 +129,33 @@ const CheckoutPage = () => {
               onChange={handleChange} 
             />
             <input 
-              className="text-field-half"
               type="text" 
               name="lastName" 
               placeholder="Last name" 
               value={formData.lastName} 
               onChange={handleChange} 
             />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="text" name="company" placeholder="Company (optional)" value={formData.company} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input  className="text-field" type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="text" name="apartment" placeholder="Apartment, suite, etc. (optional)" value={formData.apartment} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="text" name="city" placeholder="City" value={formData.city} onChange={handleChange} />
             </div>
-            <div className="form-group">
-            <input className="text-field" type="text" name="postcode" placeholder="Postcode" value={formData.postcode} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <input className="text-field" type="tel" name="phone" placeholder="Phone (optional)" value={formData.phone} onChange={handleChange} />
-          </div>
+            <input type="text" name="company" placeholder="Company (optional)" value={formData.company} onChange={handleChange} />
+            <input type="text" name="address" placeholder="Address" value={formData.address} onChange={handleChange} />
+            <input type="text" name="apartment" placeholder="Apartment, suite, etc. (optional)" value={formData.apartment} onChange={handleChange} />
+            <input type="text" name="city" placeholder="City" value={formData.city} onChange={handleChange} />
+            <div className="half">
+            <input 
+              type="text" 
+              name="postcode" 
+              placeholder="Postcode" 
+              value={formData.postcode} 
+              onChange={handleChange} 
+            />
+            <input 
+            type="tel" 
+            name="phone" 
+            placeholder="Phone (optional)" 
+            value={formData.phone} 
+            onChange={handleChange} />
+            </div>
+            </div>
             </>
           )}
         </form>
